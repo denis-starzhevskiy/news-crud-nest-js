@@ -1,0 +1,11 @@
+version: "4.12.0"
+services:
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=12345
+      - MONGO_INITDB_DATABASE=NEWS
+    ports:
+      - 27017:27017
+
