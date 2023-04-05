@@ -16,8 +16,12 @@ export class NewsService {
     return news.save();
   }
 
-  async findAll(): Promise<NewsDocument[]> {
+  async findAll(language: string): Promise<NewsDocument[]> {
     return this.newsModel.find();
+  }
+
+  async findAllByLanguage(language: string): Promise<NewsDocument[]> {
+    return this.newsModel.find({lang: language});
   }
 
   async findOne(id: string): Promise<NewsDocument> {
